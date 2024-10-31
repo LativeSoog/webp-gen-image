@@ -80,6 +80,19 @@ const api = new Text2ImageAPI("https://api-key.fusionbrain.ai/", apiKey, secretK
 // Для обработки JSON в теле запроса
 app.use(express.json());
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://webp-gen-image.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+  // Если это OPTIONS запрос (предварительный запрос CORS), возвращаем статус 200
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
+
 // Маршрут для генерации изображения
 app.post("/generate-image", async (req, res) => {
   try {
