@@ -30,6 +30,7 @@
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
     "sass-embedded": "^1.79.4",
+    "serve": "^14.2.4",
     "vite": "^5.4.8"
   }
 }
