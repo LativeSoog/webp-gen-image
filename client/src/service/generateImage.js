@@ -4,7 +4,7 @@ const DATA_TAG = { type: "Generate", id: "LIST" };
 export const generateApi = createApi({
   reducerPath: "generateApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_API_URL,
+    baseUrl: "https://perpetual-emotion-production.up.railway.app/",
   }),
   endpoints: (build) => ({
     generateImage: build.mutation({
