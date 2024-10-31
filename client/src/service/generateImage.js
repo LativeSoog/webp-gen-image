@@ -4,7 +4,7 @@ const DATA_TAG = { type: "Generate", id: "LIST" };
 export const generateApi = createApi({
   reducerPath: "generateApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.APP_API_URL,
+    baseUrl: import.meta.env.VITE_API_URL,
   }),
   endpoints: (build) => ({
     generateImage: build.mutation({
