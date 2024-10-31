@@ -9,7 +9,7 @@ export const generateApi = createApi({
   endpoints: (build) => ({
     generateImage: build.mutation({
       query: ({ prompt, width, height, style }) => ({
-        url: "/generate-image",
+        url: `${import.meta.env.VITE_API_URL}/generate-image`,
         method: "POST",
         body: JSON.stringify({ prompt, width, height, style }),
         headers: {
