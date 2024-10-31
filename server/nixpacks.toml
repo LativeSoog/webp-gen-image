@@ -1,3 +1,5 @@
-[phases]
-setup = "npm install"
-start = "npm start"
+[phases.setup]
+cmds = ["npm install"]
+
+[phases.start]
+cmds = ["npm start"]
